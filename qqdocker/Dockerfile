@@ -24,11 +24,11 @@ RUN mkdir /logs \
         && mkdir /pss \
         && cd  /pss \
         && git init \
-        && git remote add -f origin https://github.com/iouAkira/someDockerfile.git \
+        && git remote add -f origin https://github.com/hellowjjb/mydocker.git \
         && git config core.sparsecheckout true \
-        && echo pack_some_script/* >> /pss/.git/info/sparse-checkout \
+        && echo qqdocker/* >> /pss/.git/info/sparse-checkout \
         && git pull origin master \
-        && cp /pss/pack_some_script/crontab_list.sh /pss/crontab_list.sh
+        && cp /pss/qqdocker/crontab_list.sh /pss/crontab_list.sh
 
 # 支持喜马拉雅极速版仓库
 RUN git clone https://github.com/Zero-S1/xmly_speed.git /xmly_speed \
@@ -40,15 +40,15 @@ RUN git clone https://github.com/Zero-S1/xmly_speed.git /xmly_speed \
 # 支持多账号企鹅阅读的仓库
 RUN git clone https://github.com/hellowjjb/qqreader2021.git /qqread \
         && cd /qqread \
-        && git checkout master \
+        && git checkout main \
         && npm install
 
 # 支持多账号汽车之家的仓库
-RUN git clone https://github.com/ziye12/QCZJSPEED.git /QCZJSPEED
+RUN git clone https://github.com/hellowjjb/QCZJ_SPEED.git /QCZJSPEED
 
 
 # github action 构建
-COPY ./pack_some_script/docker_entrypoint.sh /usr/local/bin/
+COPY ./qqdocker/docker_entrypoint.sh /usr/local/bin/
 # 本地构建
 # COPY ./docker_entrypoint.sh /usr/local/bin/
 RUN chmod +x /usr/local/bin/docker_entrypoint.sh \
