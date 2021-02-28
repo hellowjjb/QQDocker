@@ -48,7 +48,8 @@ RUN git clone https://github.com/hellowjjb/QCZJ_SPEED.git /QCZJSPEED
 
 
 # github action 构建
-COPY ./qqdocker/docker_entrypoint.sh /usr/local/bin/
+#COPY ./qqdocker/docker_entrypoint.sh /usr/local/bin/
+COPY /pss/qqdocker/docker_entrypoint.sh /usr/local/bin/
 # 本地构建
 # COPY ./docker_entrypoint.sh /usr/local/bin/
 RUN chmod +x /usr/local/bin/docker_entrypoint.sh \
