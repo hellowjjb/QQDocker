@@ -14,8 +14,8 @@ echo "获取最新定时任务相关代码"
 echo "##############################################################################"
 cd /pss
 git pull origin master
-cd pack_some_script
-cp crontab_list.sh default_task.sh scripts_update.sh scripts_update.sh send_notify.py /pss
+cd qqdocker
+cp crontab_list.sh default_task.sh scripts_update.sh send_notify.py /pss
 echo "##############################################################################"
 echo "Get the latest task related code completion..."
 echo "获取最新定时任务相关代码完成"
