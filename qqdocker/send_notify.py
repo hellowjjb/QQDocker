@@ -281,12 +281,12 @@ def get_remote_context(check_name, file_name):
     resp = ''
     try:
         resp = requests.get(
-            url="https://github.com/iouAkira/someDockerfile/raw/master/pack_some_script/"+file_name, timeout=10)
+            url="https://github.com/hellowjjb/mydocker/raw/master/qqdocker/"+file_name, timeout=10)
     except RequestException as error:
         logger.warning(f"获取{check_name}内容时发生网络请求异常，尝试使用镜像仓库")
         try:
             resp = requests.get(
-                url="https://raw.fastgit.org/iouAkira/someDockerfile/master/pack_some_script/"+file_name, timeout=10)
+                url="https://raw.fastgit.org/hellowjjb/mydocker/master/qqdocker/"+file_name, timeout=10)
         except Exception as errot:
             logger.warning(f"使用镜像仓库网络请求异常，获取{check_name}内容失败。")
             get_success = False
