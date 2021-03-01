@@ -29,6 +29,7 @@ RUN mkdir /logs \
         && echo qqjscript/* >> /pss/.git/info/sparse-checkout \
         && git pull origin master \
         && cp /pss/qqjscript/crontab_list.sh /pss/crontab_list.sh
+        && cp /pss/qqjscript/docker_entrypoint.sh /usr/local/bin/
 
 # 支持喜马拉雅极速版仓库
 RUN git clone https://github.com/Zero-S1/xmly_speed.git /xmly_speed \
@@ -48,7 +49,7 @@ RUN git clone https://github.com/hellowjjb/QCZJ_SPEED.git /QCZJSPEED
 
 
 # github action 构建
-COPY ./qqjscript/docker_entrypoint.sh /usr/local/bin/
+# COPY ./qqjscript/docker_entrypoint.sh /usr/local/bin/
 # 本地构建
 # COPY ./docker_entrypoint.sh /usr/local/bin/
 RUN chmod +x /usr/local/bin/docker_entrypoint.sh \
