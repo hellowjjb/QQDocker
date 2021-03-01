@@ -1,6 +1,6 @@
 my_script:
-  image: akyakya/pack_some_script:latest
-  container_name: my_script
+  image: hellowjjb/qqdocker:latest
+  container_name: qq_script
   restart: always
   tty: true
   volumes:
